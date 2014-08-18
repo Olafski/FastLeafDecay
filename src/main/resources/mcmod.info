@@ -1,0 +1,16 @@
+[
+{
+  "modid": "fastleafdecay",
+  "name": "Fast Leaf Decay",
+  "description": "Increases leaf decay rates.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Olafski"],
+  "credits": "Lumien for making the RandomThings mod, from which I extracted the code for this mod.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

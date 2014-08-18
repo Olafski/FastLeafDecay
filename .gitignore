@@ -1,0 +1,16 @@
+/*
+!/.gitignore
+!/gradle/
+!/gradle/*
+!/gradle*
+!/src/
+!/src/*
+!/*.gradle
+!/*.md
+!/version.json
+!/libs/*
+!/libs/
+.gradle
+Thumbs.db
+Update.bat
+*.psd
