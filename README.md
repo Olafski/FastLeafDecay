@@ -2,6 +2,9 @@ FastLeafDecay
 =============
 A simple Minecraft mod that speeds up leaf decay after you cut down the wood in a tree.
 
+## Download
+Download the source code from right here, or get the jar version at http://www.keijsers.org/minecraft/FastLeafDecay-1.7.10-1.0.jar
+
 ## Requirements
 * Minecraft 1.7.10
 * [Minecraft Forge](http://files.minecraftforge.net/) version 10.13.0.1199 or higher
