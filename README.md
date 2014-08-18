@@ -1,9 +1,9 @@
 FastLeafDecay
 =============
-A simple Minecraft mod that speeds up leaf decay after you cut down the wood in a tree.
+A simple Minecraft mod that speeds up leaf decay after you cut down the wood in a tree. Generally it will only take about five seconds before all leaves are gone.
 
 ## Download
-Download the source code from right here, or get the jar version from the Releases tab [or from my website](http://bit.ly/fastleafdecay10).
+Download the source code from right here, or get the jar version from the [Releases tab](https://github.com/Olafski/FastLeafDecay/releases) or from [my website](http://bit.ly/fastleafdecay10).
 
 ## Requirements
 * Minecraft 1.7.10
