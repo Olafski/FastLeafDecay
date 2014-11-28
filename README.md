@@ -15,7 +15,7 @@ Bug reports are welcome here on GitHub. Other discussion in the [MinecraftForum 
 Only servers need to have this mod, so if you're playing on a server that has it installed you will not need to install it on the client.
 
 ## Known (compatibility) issues
-This mod is probably not compatible with RandomThings, as they both modify the leaves block.
+This mod is not compatible with RandomThings, as they both modify the leaves block.
 
 ## Modpacks
 Feel free to add this mod to your pack. No permission required! I would appreciate a line in [the MinecraftForum thread though](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2196219-fastleafdecay-leaves-be-gone).
