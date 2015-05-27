@@ -13,7 +13,6 @@ public class FldHandler {
 
     public static void handleLeaveDecay(World worldObj, int posX, int posY, int posZ, Block block)
     {
-        System.out.println("Scheduling block update, base: " + baseDecayTime + ", random: " + randomizationTime);
         worldObj.scheduleBlockUpdate(posX, posY, posZ, block, baseDecayTime + rng.nextInt(randomizationTime));
 
         return;
