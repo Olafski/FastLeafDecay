@@ -8,9 +8,14 @@ import java.util.Random;
 public class FldHandler {
     static Random rng = new Random();
 
+    private static int baseDecayTime = FldConfiguration.minimumDecayTime;
+    private static int randomizationTime = FldConfiguration.maximumDecayTime - FldConfiguration.minimumDecayTime;
+
     public static void handleLeaveDecay(World worldObj, int posX, int posY, int posZ, Block block)
     {
-            worldObj.scheduleBlockUpdate(posX, posY, posZ, block, 4 + rng.nextInt(7));
-            return;
+        System.out.println("Scheduling block update, base: " + baseDecayTime + ", random: " + randomizationTime);
+        worldObj.scheduleBlockUpdate(posX, posY, posZ, block, baseDecayTime + rng.nextInt(randomizationTime));
+
+        return;
     }
 }
