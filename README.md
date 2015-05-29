@@ -14,6 +14,11 @@ Comments are welcome on CurseForge or in the [MinecraftForum thread](http://www.
  
 Only servers need to have this mod, so if you're playing on a server that has it installed you will not need to install it on the client.
 
+## Compatibility
+This mod will speed up leaf removal of trees from the following mods, in addition to the default Minecraft trees:
+* Natura
+* Thaumcraft
+
 ## Known (compatibility) issues
 This mod is not compatible with RandomThings, as they both modify the leaves block.
 
