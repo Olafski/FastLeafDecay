@@ -16,7 +16,7 @@ public class FldTransformer implements IClassTransformer{
 
     @Override
     public byte[] transform(String obfName, String transformedName, byte[] basicClass) {
-        if (transformedName.equals("net.minecraft.block.BlockLeavesBase"))
+        if (transformedName.equals("net.minecraft.block.BlockLeavesBase") || transformedName.equals("mods.natura.blocks.trees.NLeaves") || transformedName.equals("thaumcraft.common.blocks.BlockMagicalLeaves"))
         {
             return patchLeaveClass(basicClass);
         }
