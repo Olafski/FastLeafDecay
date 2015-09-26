@@ -17,7 +17,6 @@ Only servers need to have this mod, so if you're playing on a server that has it
 ## Compatibility
 This mod will speed up leaf removal of trees from the following mods, in addition to the default Minecraft trees:
 * Natura
-* Thaumcraft
 
 ## Known (compatibility) issues
 This mod is not compatible with RandomThings, as they both modify the leaves block.
