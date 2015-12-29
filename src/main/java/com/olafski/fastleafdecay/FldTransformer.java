@@ -20,30 +20,32 @@ public class FldTransformer implements IClassTransformer{
         if (transformedName.equals("net.minecraft.block.BlockLeavesBase")
                 || transformedName.equals("mods.natura.blocks.trees.NLeaves")) // Natura
         {
-            return patchLeaveClass(basicClass);
+            return patchLeafClass(basicClass);
         }
 
         return basicClass;
     }
 
-    private byte[] patchLeaveClass(byte[] basicClass)
+    private byte[] patchLeafClass(byte[] basicClass)
     {
         coreLogger.log(Level.INFO, "Patching leaves.");
 
         ClassNode classNode = new ClassNode();
         ClassReader classReader = new ClassReader(basicClass);
         classReader.accept(classNode, 0);
-        coreLogger.log(Level.INFO, "Found Leave Class: " + classNode.name);
+        coreLogger.log(Level.INFO, "Found leaf Class: " + classNode.name);
 
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
         classNode.accept(writer);
 
-        String methodName = FldLoadingPlugin.IN_MCP ? "onNeighborBlockChange" : "func_149695_a"; // hardcoded for the easy
+        String methodName = FldLoadingPlugin.IN_MCP ? "onNeighborBlockChange" : "func_149695_a";
 
         String worldClass = "net/minecraft/world/World";
         String blockClass = "net/minecraft/block/Block";
 
-        MethodVisitor mv = writer.visitMethod(ACC_PUBLIC, methodName, "(L" + worldClass + ";IIIL" + blockClass + ";)V", null, null);
+        String methodSignature = "(L" + worldClass + ";IIIL" + blockClass + ";)V";
+
+        MethodVisitor mv = writer.visitMethod(ACC_PUBLIC, methodName, methodSignature, null, null);
         mv.visitCode();
 
         Label l0 = new Label();
@@ -54,7 +56,7 @@ public class FldTransformer implements IClassTransformer{
         mv.visitVarInsn(ILOAD, 3);
         mv.visitVarInsn(ILOAD, 4);
         mv.visitVarInsn(ALOAD, 0);
-        mv.visitMethodInsn(INVOKESTATIC, "com/olafski/fastleafdecay/FldHandler", "handleLeaveDecay", "(L" + worldClass + ";IIIL" + blockClass + ";)V");
+        mv.visitMethodInsn(INVOKESTATIC, "com/olafski/fastleafdecay/FldHandler", "handleLeafDecay", methodSignature);
         Label l1 = new Label();
         mv.visitLabel(l1);
         mv.visitLineNumber(82, l1);
@@ -62,11 +64,11 @@ public class FldTransformer implements IClassTransformer{
         Label l2 = new Label();
         mv.visitLabel(l2);
         mv.visitLocalVariable("this", "Lcom/olafski/fastleafdecay/FldTransformer;", null, l0, l2, 0);
-        mv.visitLocalVariable("p_149695_1_", "L" + worldClass + ";", null, l0, l2, 1);
-        mv.visitLocalVariable("p_149695_2_", "I", null, l0, l2, 2);
-        mv.visitLocalVariable("p_149695_3_", "I", null, l0, l2, 3);
-        mv.visitLocalVariable("p_149695_4_", "I", null, l0, l2, 4);
-        mv.visitLocalVariable("p_149695_5_", "L" + blockClass + ";", null, l0, l2, 5);
+        mv.visitLocalVariable("world", "L" + worldClass + ";", null, l0, l2, 1);
+        mv.visitLocalVariable("x", "I", null, l0, l2, 2);
+        mv.visitLocalVariable("y", "I", null, l0, l2, 3);
+        mv.visitLocalVariable("z", "I", null, l0, l2, 4);
+        mv.visitLocalVariable("block", "L" + blockClass + ";", null, l0, l2, 5);
         mv.visitMaxs(5, 6);
         mv.visitEnd();
 

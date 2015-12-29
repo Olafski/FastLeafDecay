@@ -13,13 +13,12 @@ public class FldHandler {
     private static int baseDecayTime = FldConfiguration.minimumDecayTime;
     private static int randomizationTime = FldConfiguration.maximumDecayTime - FldConfiguration.minimumDecayTime;
 
-    public static void handleLeaveDecay(World worldObj, int posX, int posY, int posZ, Block block)
+    public static void handleLeafDecay(World worldObj, int posX, int posY, int posZ, Block block)
     {
         if (block.getLocalizedName().startsWith("tile.ore.berries")) { // Ignore Natura oreberries
             return;
         }
 
-        //System.out.println("(" + posX + "," + posY + "," + posZ + "), block: " + block.getLocalizedName());
         worldObj.scheduleBlockUpdate(posX, posY, posZ, block, baseDecayTime + rng.nextInt(randomizationTime));
 
         return;
